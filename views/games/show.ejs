@@ -151,7 +151,7 @@
                                                 </div>
                                                 <% } else { %>
                                                     <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden border-2 border-gray-800 hover:border-brand-gold transition-colors relative cursor-pointer"
-                                                        onclick="openGallery(<%= imageIndex %>)">
+                                                        onclick="openGallery(<%=imageIndex%>)">
                                                         <div
                                                             class="absolute inset-0 flex items-center justify-center z-0">
                                                             <div class="text-6xl opacity-30">🖼️</div>
@@ -393,9 +393,15 @@
                         class="w-auto h-auto max-w-[95vw] max-h-[95vh] md:h-[90vh] object-contain shadow-2xl mx-auto select-none">
                 </div>
 
+                <!-- Gallery Data Container -->
+                <div id="gallery-data"
+                    data-images="<%= JSON.stringify(game.sections.media.filter(m => m.type === 'image')) %>"
+                    class="hidden"></div>
+
                 <script>
                     // Gallery data from EJS
-                    const mediaImages = <% - JSON.stringify(game.sections.media.filter(m => m.type === 'image')) %>;
+                    const dataElement = document.getElementById('gallery-data');
+                    const mediaImages = dataElement ? JSON.parse(dataElement.dataset.images) : [];
                     let currentImageIndex = 0;
 
                     function openGallery(index) {
