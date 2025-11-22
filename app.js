@@ -26,7 +26,7 @@ const gamesData = [
         featured: true,
         platforms: [
             { name: 'Steam', url: 'https://store.steampowered.com/', icon: 'steam' },
-            { name: 'itch.io', url: 'https://itch.io/', icon: 'itch' }
+            { name: 'itch.io', url: 'https://a-fair-studio.itch.io/wing-it', icon: 'itch' }
         ],
         hasDemo: false,
         demoMobileCompatible: false,
@@ -66,10 +66,9 @@ const gamesData = [
         description: 'You are a caveman protecting the last flame. Avoid wind, rain, and rivers. Carry the torch from the sky to your cave before it burns out!',
         featured: false,
         platforms: [
-            { name: 'itch.io', url: 'https://itch.io/', icon: 'itch' }
+            { name: 'itch.io', url: 'https://a-fair-studio.itch.io/torch-it', icon: 'itch' }
         ],
         hasDemo: false,
-        demoMobileCompatible: false,
         trailerUrl: 'https://www.youtube.com/embed/OlL80Z_YfY8?si',
         bannerImage: '/images/torch-it/torch-it-banner.jpg',
         logoImage: '/images/torch-it/torch-it-logo.png',
