@@ -1,0 +1,31 @@
+{
+  "name": "afairstudio-homepage",
+  "version": "1.0.0",
+  "description": "A FAIR Studio - Indie Game Studio Website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "build:css": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch",
+    "postinstall": "npx tailwindcss -i ./public/css/input.css -o ./public/css/output.css"
+  },
+  "keywords": [
+    "game",
+    "studio",
+    "indie",
+    "express",
+    "ejs"
+  ],
+  "author": "A FAIR Studio",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
+  }
+}

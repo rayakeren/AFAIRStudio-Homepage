@@ -1,0 +1,210 @@
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-950 border-t-2 border-gray-800">
+    <div class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+            <!-- About Section -->
+            <div>
+                <div class="flex items-center space-x-3 mb-6">
+                    <img src="/images/afair-studio-logo-white.png" alt="A FAIR Studio" class="h-10 opacity-70">
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                    Creating balanced and engaging games.
+                </p>
+                <p class="text-brand-gold text-xs uppercase tracking-widest font-semibold">
+                    Tipping the scales of gameplay
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-xl text-white mb-6 tracking-wide font-bold">QUICK LINKS</h4>
+                <div class="space-y-3">
+                    <a href="/" class="block text-gray-400 hover:text-brand-gold transition-colors text-sm">Home</a>
+                    <a href="/about" class="block text-gray-400 hover:text-brand-gold transition-colors text-sm">About
+                        Us</a>
+                    <a href="/games" class="block text-gray-400 hover:text-brand-gold transition-colors text-sm">Our
+                        Games</a>
+                    <a href="/contact"
+                        class="block text-gray-400 hover:text-brand-gold transition-colors text-sm">Contact</a>
+                    <a href="/privacy"
+                        class="block text-gray-400 hover:text-brand-gold transition-colors text-sm">Privacy Policy</a>
+                    <a href="/tos" class="block text-gray-400 hover:text-brand-gold transition-colors text-sm">Terms of
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Social & Newsletter -->
+            <div>
+                <h4 class="text-xl text-white mb-6 tracking-wide font-bold">CONNECT</h4>
+                <div class="space-y-4 mb-8">
+                    <a href="https://instagram.com/studioafair" target="_blank"
+                        class="flex items-center space-x-3 text-gray-400 hover:text-brand-gold transition-colors group">
+                        <%- getIcon('instagram', 'social-icon') %>
+                        <span class="text-sm">Instagram</span>
+                    </a>
+                    <a href="https://discord.gg/hWJfE8d8gv" target="_blank"
+                        class="flex items-center space-x-3 text-gray-400 hover:text-brand-gold transition-colors group">
+                        <%- getIcon('discord', 'social-icon') %>
+                        <span class="text-sm">Discord</span>
+                    </a>
+                    <a href="https://youtube.com/@afairstudio" target="_blank"
+                        class="flex items-center space-x-3 text-gray-400 hover:text-brand-gold transition-colors group">
+                        <%- getIcon('youtube', 'social-icon') %>
+                        <span class="text-sm">YouTube</span>
+                    </a>
+                </div>
+
+                <div class="border-t border-gray-800 pt-6">
+                    <h5 class="text-sm font-bold text-white mb-3 uppercase tracking-wider">Newsletter</h5>
+                    <form class="flex">
+                        <input type="email" placeholder="your@email.com"
+                            class="flex-1 px-4 py-2 bg-black border-2 border-gray-800 focus:border-brand-gold focus:outline-none text-white text-sm transition-colors">
+                        <button type="submit"
+                            class="bg-brand-purple hover:bg-brand-gold text-white hover:text-black px-6 py-2 font-bold text-sm transition-all border-2 border-brand-purple hover:border-brand-gold">
+                            →
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div
+            class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2025 A FAIR Studio. All rights reserved.</p>
+            <p class="mt-4 md:mt-0">Surabaya, Indonesia</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    }
+</script>
+
+<!-- Simple Animations -->
+<style>
+    /* Fade in on scroll */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Enhanced card hover effects */
+    .game-card {
+        transition: all 0.3s ease;
+    }
+
+    .game-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-card .game-image {
+        transition: all 0.3s ease;
+    }
+
+    .game-card:hover .game-image {
+        transform: scale(1.05);
+    }
+
+    /* Subtle background animation */
+    @keyframes subtle-bg {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    .animated-bg {
+        background: linear-gradient(-45deg, rgba(255,215,0,0.03), rgba(147,51,234,0.02), rgba(255,215,0,0.03));
+        background-size: 400% 400%;
+        animation: subtle-bg 20s ease infinite;
+    }
+
+    /* Button hover enhancement */
+    .btn-primary, .btn-secondary {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-primary:hover, .btn-secondary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary::before, .btn-secondary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    .btn-primary:hover::before, .btn-secondary:hover::before {
+        left: 100%;
+    }
+</style>
+
+<script>
+    // Simple fade-in animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for fade-in
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.classList.add('fade-in');
+            observer.observe(section);
+        });
+
+        // Add animated background to hero section
+        const heroSection = document.querySelector('.bg-gradient-to-b');
+        if (heroSection) {
+            heroSection.classList.add('animated-bg');
+        }
+
+        // Add enhanced hover effects to game cards
+        const gameCards = document.querySelectorAll('.game-card');
+        gameCards.forEach(card => {
+            card.classList.add('game-card');
+            const image = card.querySelector('img');
+            if (image) {
+                image.classList.add('game-image');
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
