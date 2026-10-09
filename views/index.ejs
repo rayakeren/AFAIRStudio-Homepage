@@ -1,5 +1,4 @@
-<% const pageTitle='Home' ; %>
-    <%- include('partials/header') %>
+<%- include('partials/header', { pageTitle: 'Home' }) %>
 
         <!-- Hero Section -->
         <section class="relative bg-gradient-to-b from-gray-900 to-black py-32 md:py-48 overflow-hidden">
@@ -74,7 +73,7 @@
 
                                 <a href="/games/<%= featuredGame.id %>"
                                     class="btn-primary inline-block uppercase tracking-wide">
-                                    Play Now
+                                    View Game
                                 </a>
                             </div>
                         </div>
@@ -93,7 +92,7 @@
                             <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                             <% gamesData.forEach(game=> { %>
                                 <a href="/games/<%= game.id %>" class="group block game-card">
                                     <div

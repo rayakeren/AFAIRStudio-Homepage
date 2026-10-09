@@ -1,0 +1,23 @@
+{
+  "title": "Ice Tea Tycoon",
+  "order": 5,
+  "genre": "Tycoon / Strategy",
+  "description": "Brew, sell, and build your iced tea empire!",
+  "about": "Ice Tea Tycoon is a tycoon game about building your own iced tea business in Indonesia. Start small with a simple street stand and work your way up by perfecting your recipe, managing supplies, and making strategic business decisions.",
+  "features": [
+    "Set up shop in different locations and adjust prices to maximize profits",
+    "Balance sweetness, ice and tea strength to suit different customers",
+    "Upgrade your stand, hire staff and unlock new features",
+    "Arcade-style Combo Bar that triggers Customer Rush events",
+    "Changing weather, customer moods and market trends"
+  ],
+  "platforms": [
+    {
+      "name": "itch.io",
+      "url": "https://a-fair-studio.itch.io/ice-tea-tycoon",
+      "icon": "itch"
+    }
+  ],
+  "players": "1 Player",
+  "releaseDate": "In development"
+}

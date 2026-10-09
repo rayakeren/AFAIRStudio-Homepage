@@ -26,10 +26,19 @@ A FAIR Studio is an indie game development team from Surabaya, Indonesia, born f
 ```
 AFAIRStudio-Homepage/
 ├── app.js                 # Express server & routes
+├── content/               # Everything editable: games, awards, team
+│   ├── awards.json
+│   ├── team.json
+│   └── games/
+│       └── <game-id>/     # One folder per game (see "Adding a Game")
+├── utils/
+│   ├── content.js         # Reads the content folder
+│   └── iconHelpers.js     # SVG icons
 ├── package.json           # Dependencies & scripts
 ├── tailwind.config.js     # Tailwind configuration
 ├── vercel.json            # Vercel deployment config
 ├── public/
+│   ├── images/            # Studio logos and team photos
 │   └── css/
 │       ├── input.css      # Tailwind source file
 │       └── output.css     # Compiled CSS (generated)
@@ -100,6 +109,55 @@ AFAIRStudio-Homepage/
    http://localhost:3000
    ```
 
+## 🎮 Adding a Game
+
+No code changes needed. Create a folder in `content/games/`; the folder name becomes the URL (`/games/<folder-name>`).
+
+```
+content/games/my-game/
+├── game.json        # Text and links (required)
+├── banner.jpg       # Full-width header image
+├── logo.png         # Optional title art over the banner (falls back to the title as text)
+├── thumb.jpg        # Card image on the home and games pages
+├── feature.jpg      # Image beside the features list
+└── screenshots/     # Any number of images, shown in filename order
+    ├── 01-main-menu.jpg   # Caption becomes "Main Menu"
+    └── 02.jpg             # No name: gets a generic caption
+```
+
+Missing images fall back to the banner or the first screenshot. `game.json`:
+
+```json
+{
+  "title": "My Game",
+  "order": 6,
+  "featured": false,
+  "genre": "Puzzle Platformer",
+  "description": "One or two sentences for cards and link previews.",
+  "about": "Longer text for the game page.",
+  "features": ["First feature", "Second feature"],
+  "trailerId": "YouTube video ID (optional)",
+  "platforms": [
+    { "name": "itch.io", "url": "https://a-fair-studio.itch.io/my-game", "icon": "itch" }
+  ],
+  "demo": { "embedUrl": "https://itch.io/embed-upload/123456", "mobileCompatible": false },
+  "rating": "optional",
+  "players": "1 Player",
+  "releaseDate": "In development",
+  "updateNotesUrl": "optional"
+}
+```
+
+`order` sets the position in listings, and one game should have `"featured": true` for the home page. Icon names are listed in `utils/iconHelpers.js`.
+
+## 🏆 Adding an Award
+
+Add an entry to `content/awards.json`. The badge is drawn by the site, so no image is needed. `game` is the game's folder name; the badge then appears on that game's page as well as on the About page.
+
+```json
+{ "title": "1st Place", "event": "Event Name", "year": 2026, "game": "my-game" }
+```
+
 ## 📜 Available Scripts
 
 - `npm start` - Start the production server
@@ -109,7 +167,7 @@ AFAIRStudio-Homepage/
 ## 🌐 Pages
 
 - **/** - Home page with featured game and studio intro
-- **/about** - Studio story and values
+- **/about** - Studio story, awards and team
 - **/games** - All games gallery
 - **/games/:gameId** - Individual game page with embedded player
 - **/contact** - Contact form and social links
@@ -118,8 +176,8 @@ AFAIRStudio-Homepage/
 
 ## 🎨 Brand Colors
 
-- **Deep Purple:** `#4b0082` (brand-purple)
-- **Gold:** `#ffd700` (brand-gold)
+- **Purple:** `#6B4FA0` (brand-purple)
+- **Gold:** `#FDB81E` (brand-gold)
 
 ## 📦 Deployment
 

@@ -1,0 +1,29 @@
+{
+  "title": "Little Mayor",
+  "order": 2,
+  "genre": "City Builder / Simulation",
+  "description": "Make a toy city around the house. Build little places and send your toy friends to work.",
+  "about": "Remember when whatever was lying around the house and your toys were enough to build a city? Little Mayor is a city builder that takes place on a kid's bedroom floor. The whole city is built out of toys and whatever else is lying around the room, and your residents are peg dolls, toy soldiers, robots and more.",
+  "features": [
+    "Build workshops and put your toy friends to work in them",
+    "Run production chains, from sugar and crayons up to candy, cupcakes and toy cars",
+    "Grant your friends' wishes at the town hall to grow the town",
+    "Research new buildings and buy more floor space",
+    "14 toy friends, each good at some jobs and bad at others",
+    "A clone station, if you want more of a friend you already like"
+  ],
+  "trailerId": "s9HtY2gFzoQ",
+  "platforms": [
+    {
+      "name": "itch.io",
+      "url": "https://a-fair-studio.itch.io/little-mayor",
+      "icon": "itch"
+    }
+  ],
+  "demo": {
+    "embedUrl": "https://itch.io/embed-upload/19363946?color=333333",
+    "mobileCompatible": false
+  },
+  "players": "1 Player",
+  "releaseDate": "Prototype"
+}

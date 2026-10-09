@@ -1,5 +1,4 @@
-<% const pageTitle='Contact Us' ; %>
-    <%- include('partials/header') %>
+<%- include('partials/header', { pageTitle: 'Contact Us' }) %>
 
         <!-- Contact Header -->
         <section class="py-24 bg-gradient-to-b from-gray-900 to-black">
@@ -102,7 +101,7 @@
                         <h2 class="text-3xl font-bold text-white mb-8 tracking-wide uppercase">
                             Send A Message
                         </h2>
-                        <form class="space-y-6 bg-gray-900 border-2 border-gray-800 p-8">
+                        <form id="contact-form" class="space-y-6 bg-gray-900 border-2 border-gray-800 p-8">
                             <div>
                                 <label for="name"
                                     class="block text-gray-300 font-bold mb-2 uppercase text-sm tracking-wider">Your
@@ -142,7 +141,8 @@
                             </button>
 
                             <p class="text-sm text-gray-500 text-center">
-                                We typically respond within 24-48 hours.
+                                This opens your email app with the message filled in. We typically respond
+                                within 24-48 hours.
                             </p>
                         </form>
                     </div>
@@ -150,5 +150,20 @@
                 </div>
             </div>
         </section>
+
+        <script>
+            // No mail backend yet: hand the message to the visitor's email app
+            document.getElementById('contact-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const data = new FormData(this);
+                const body = data.get('message') + '
+
+' + data.get('name') + '
+' + data.get('email');
+                window.location.href = 'mailto:studioafair@gmail.com'
+                    + '?subject=' + encodeURIComponent(data.get('subject'))
+                    + '&body=' + encodeURIComponent(body);
+            });
+        </script>
 
         <%- include('partials/footer') %>

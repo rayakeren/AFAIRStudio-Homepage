@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Mirabilis Sera Alym Maqomy",
+    "role": "Sound Engineer",
+    "image": "/images/team/alym.png",
+    "instagram": "https://instagram.com/sseldneseldine",
+    "linkedin": "https://www.linkedin.com/company/a-fair-studio"
+  },
+  {
+    "name": "M. Fahril Ilmi",
+    "role": "Programmer",
+    "image": "/images/team/fahril.png",
+    "instagram": "https://instagram.com/f3fahril",
+    "linkedin": "https://www.linkedin.com/in/m-fahril-ilmi-492432322"
+  },
+  {
+    "name": "Mohammad Izza Al Ajib",
+    "role": "3D Artist",
+    "image": "/images/team/ajib.png",
+    "instagram": "https://instagram.com/your_kingss",
+    "linkedin": "https://www.linkedin.com/in/izza-al-ajib-726109335"
+  },
+  {
+    "name": "Irvan Faturohman",
+    "role": "Programmer",
+    "image": "/images/team/irvan.png",
+    "instagram": "https://instagram.com/if.irvan",
+    "linkedin": "https://www.linkedin.com/in/irvan-faturohman"
+  },
+  {
+    "name": "Muhammad Raya Ramadan",
+    "role": "Project Manager",
+    "image": "/images/team/raya.png",
+    "instagram": "https://instagram.com/rayakren",
+    "linkedin": "https://www.linkedin.com/in/rayakren"
+  }
+]

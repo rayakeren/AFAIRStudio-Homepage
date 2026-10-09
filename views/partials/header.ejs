@@ -4,11 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    <%= typeof pageTitle !=='undefined' ? pageTitle + ' | ' : '' %>A FAIR Studio
-  </title>
-  <meta name="description"
-    content="A FAIR Studio - An indie game studio from Surabaya, Indonesia. Creating balanced, engaging gaming experiences.">
+  <% const siteUrl='https://www.a-fair.com' ; %>
+  <% const fullTitle=(typeof pageTitle !=='undefined' ? pageTitle + ' | ' : '' ) + 'A FAIR Studio' ; %>
+  <% const description=typeof pageDescription !=='undefined' ? pageDescription
+    : 'A FAIR Studio - An indie game studio from Surabaya, Indonesia. Creating balanced, engaging gaming experiences.' ; %>
+  <% const shareImage=siteUrl + (typeof pageImage !=='undefined' && pageImage ? pageImage : '/images/afair-studio-logo-main.png' ); %>
+  <title><%= fullTitle %></title>
+  <meta name="description" content="<%= description %>">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="A FAIR Studio">
+  <meta property="og:title" content="<%= fullTitle %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:image" content="<%= shareImage %>">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="stylesheet" href="/css/output.css">
 </head>
 
@@ -40,7 +51,7 @@
               <%- getIcon('arrow-down', 'w-4 h-4 ml-1' ) %>
             </button>
             <div
-              class="absolute left-0 mt-2 w-48 bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+              class="absolute left-0 mt-2 w-48 bg-gray-900 border border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-300">
               <a href="/privacy"
                 class="block px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800 transition-colors text-sm">Privacy
                 Policy</a>
@@ -55,7 +66,8 @@
         </div>
 
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">☰</button>
+        <button id="mobile-menu-btn" class="md:hidden text-white text-2xl" aria-label="Toggle menu"
+          aria-expanded="false" aria-controls="mobile-menu">☰</button>
       </div>
 
       <!-- Mobile Navigation -->

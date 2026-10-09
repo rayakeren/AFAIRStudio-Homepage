@@ -1,0 +1,23 @@
+{
+  "title": "Logic Shield",
+  "order": 3,
+  "genre": "Co-op Puzzle Platformer",
+  "description": "Team up as Zero and One to solve logic puzzles, input the password, and seal the portal before the system collapses.",
+  "about": "Logic Shield is a cooperative puzzle-platformer where two players work together as Zero and One to defend the system from a digital breach. Navigate a security system, solve puzzles, and remember and input a password sequence to seal the unstable portal at the end of each level.",
+  "features": [
+    "Classic couch co-op for two players, on a shared keyboard or controllers",
+    "Become the living inputs Zero and One to manipulate real logic-gate circuits",
+    "Stomp on digital foes and solve circuits in a race against the clock",
+    "10 handcrafted levels, with more to come"
+  ],
+  "trailerId": "X7HjcX5pXLs",
+  "platforms": [
+    {
+      "name": "itch.io",
+      "url": "https://a-fair-studio.itch.io/logic-shield",
+      "icon": "itch"
+    }
+  ],
+  "players": "2 Players (local co-op)",
+  "releaseDate": "In development"
+}

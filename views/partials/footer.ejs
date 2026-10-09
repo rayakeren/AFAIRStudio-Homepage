@@ -74,7 +74,7 @@
         <!-- Bottom Footer -->
         <div
             class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-            <p>&copy; 2025 A FAIR Studio. All rights reserved.</p>
+            <p>&copy; <%= new Date().getFullYear() %> A FAIR Studio. All rights reserved.</p>
             <p class="mt-4 md:mt-0">Surabaya, Indonesia</p>
         </div>
     </div>
@@ -88,7 +88,8 @@
 
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenuBtn.setAttribute('aria-expanded', String(!isHidden));
         });
     }
 </script>
@@ -132,8 +133,10 @@
     }
 
     .animated-bg {
-        background: linear-gradient(-45deg, rgba(255,215,0,0.03), rgba(147,51,234,0.02), rgba(255,215,0,0.03));
-        background-size: 400% 400%;
+        /* Layered over the section's own dark gradient instead of replacing it */
+        background-image: linear-gradient(-45deg, rgba(255,215,0,0.03), rgba(147,51,234,0.02), rgba(255,215,0,0.03)),
+            linear-gradient(to bottom, #111827, #000);
+        background-size: 400% 400%, 100% 100%;
         animation: subtle-bg 20s ease infinite;
     }
 
@@ -193,16 +196,6 @@
         if (heroSection) {
             heroSection.classList.add('animated-bg');
         }
-
-        // Add enhanced hover effects to game cards
-        const gameCards = document.querySelectorAll('.game-card');
-        gameCards.forEach(card => {
-            card.classList.add('game-card');
-            const image = card.querySelector('img');
-            if (image) {
-                image.classList.add('game-image');
-            }
-        });
     });
 </script>
 </body>

@@ -1,0 +1,32 @@
+{
+  "title": "WING-IT",
+  "order": 1,
+  "featured": true,
+  "genre": "Shoot 'em up / Boss Rush",
+  "description": "From the imagination of a kid named Medy. Play as \"The Ace\" (toy plane) vs \"The Mothership\". Blast Carrier Planes for random toy-box powerups!",
+  "about": "An intense boss-rush shooter where you battle the evil Mothership! Collect random powerups from destroyed carrier planes and strategize your way to victory. Navigate through increasingly difficult waves of enemies in this fast-paced aerial combat experience.",
+  "features": [
+    "Fast-paced shoot 'em up action",
+    "Boss rush gameplay with intense battles",
+    "Random powerup system for varied strategies",
+    "Cartoony 3D graphics with vibrant colors",
+    "Challenging difficulty curve",
+    "Multiple difficulty modes"
+  ],
+  "trailerId": "-uZTbNMUfZw",
+  "platforms": [
+    {
+      "name": "Steam",
+      "url": "https://store.steampowered.com/app/4201740/WINGIT/",
+      "icon": "steam"
+    },
+    {
+      "name": "itch.io",
+      "url": "https://a-fair-studio.itch.io/wing-it",
+      "icon": "itch"
+    }
+  ],
+  "rating": "EVERYONE 10+",
+  "players": "1-2 Player",
+  "releaseDate": "Q4 2026"
+}

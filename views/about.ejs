@@ -1,5 +1,4 @@
-<% const pageTitle='About Us' ; %>
-    <%- include('partials/header') %>
+<%- include('partials/header', { pageTitle: 'About Us' }) %>
 
         <!-- About Hero -->
         <section class="py-24 bg-gradient-to-b from-gray-900 to-black">
@@ -20,6 +19,30 @@
                 </div>
             </div>
         </section>
+
+        <!-- Awards -->
+        <% if (awards.length> 0) { %>
+            <section class="py-20 bg-gray-900">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold text-white mb-16 tracking-wide text-center">
+                        AWARDS
+                    </h2>
+                    <div class="flex flex-wrap justify-center gap-x-8 gap-y-12 max-w-6xl mx-auto">
+                        <% awards.forEach(award=> { %>
+                            <div class="flex flex-col items-center">
+                                <%- include('partials/award-badge', { award }) %>
+                                <% if (award.gameTitle) { %>
+                                    <a href="/games/<%= award.game %>"
+                                        class="mt-3 text-sm text-gray-400 hover:text-brand-gold transition-colors uppercase tracking-widest font-semibold">
+                                        <%= award.gameTitle %>
+                                    </a>
+                                <% } %>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </section>
+        <% } %>
 
         <!-- Team Members -->
         <section class="py-20 bg-black">
