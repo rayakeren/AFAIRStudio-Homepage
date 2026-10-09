@@ -1,76 +1,43 @@
 <%- include('partials/header', { pageTitle: 'Home' }) %>
 
         <!-- Hero Section -->
-        <section class="relative bg-gradient-to-b from-gray-900 to-black py-32 md:py-48 overflow-hidden">
-            <div
-                class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-purple/20 via-transparent to-transparent">
-            </div>
-
+        <section class="relative bg-gradient-to-b from-gray-900 to-black py-20 md:py-28 overflow-hidden">
             <div class="container mx-auto px-4 relative z-10">
                 <div class="text-center max-w-5xl mx-auto">
-                    <!-- Logo Only -->
-                    <div class="mb-16 flex justify-center">
-                        <img src="/images/afair-studio-logo-main.png" alt="A FAIR Studio" class="h-48 md:h-64">
+                    <div class="mb-10 flex justify-center">
+                        <img src="/images/afair-studio-logo-main.png" alt="A FAIR Studio" class="h-40 md:h-56">
                     </div>
-
-                    <p class="text-xl md:text-2xl text-brand-gold font-bold mb-16 tracking-wider uppercase">
+                    <p class="text-lg md:text-xl text-brand-gold font-bold tracking-wider uppercase">
                         Tipping the Scales of Gameplay
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                        <a href="/games" class="btn-primary text-lg uppercase tracking-wide">
-                            Our Games
-                        </a>
-                        <a href="/about" class="btn-secondary text-lg uppercase tracking-wide">
-                            About Us
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Featured Game Section -->
         <% if (featuredGame) { %>
-            <section class="py-24 bg-black relative">
-                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-purple/5 to-transparent"></div>
-
-                <div class="container mx-auto px-4 relative z-10">
-                    <div class="text-center mb-16">
-                        <h2 class="text-5xl md:text-6xl text-white mb-4 tracking-wide font-bold">
-                            FEATURED GAME
-                        </h2>
-                        <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
-                    </div>
-
+            <section class="py-12 md:py-16 bg-black">
+                <div class="container mx-auto px-4">
                     <div class="max-w-6xl mx-auto">
-                        <div class="grid md:grid-cols-5 gap-12 items-center">
-                            <!-- Game Preview -->
-                            <div class="md:col-span-3">
-                                <div class="aspect-[5/4] bg-gray-900 rounded-lg border-2 border-brand-purple/50 overflow-hidden relative group game-card">
-                                    <div class="absolute inset-0 flex items-center justify-center z-0">
-                                        <div class="text-8xl opacity-20">🎮</div>
-                                    </div>
-                                    <img src="<%= featuredGame.thumbnail %>" 
-                                         alt="<%= featuredGame.title %>" 
-                                         class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 relative z-10 game-image"
-                                         onerror="this.style.display='none'">
-                                </div>
-                            </div>
+                        <h2 class="text-2xl md:text-3xl text-white mb-8 font-bold">Featured game</h2>
 
-                            <!-- Game Info -->
-                            <div class="md:col-span-2 space-y-6">
-                                <div>
-                                    <h3 class="text-4xl font-bold text-brand-gold mb-2 tracking-wide">
-                                        <%= featuredGame.title %>
-                                    </h3>
-                                    <p class="text-brand-purple uppercase text-sm tracking-widest font-bold">
-                                        <%= featuredGame.genre %>
-                                    </p>
-                                </div>
+                        <div class="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
+                            <a href="/games/<%= featuredGame.id %>"
+                                class="md:col-span-3 block aspect-[5/4] bg-gray-900 overflow-hidden group">
+                                <img src="<%= featuredGame.thumbnail %>" alt="<%= featuredGame.title %>"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            </a>
 
-                                <p class="text-gray-300 leading-relaxed">
+                            <div class="md:col-span-2">
+                                <h3 class="text-4xl font-bold text-white mb-2">
+                                    <%= featuredGame.title %>
+                                </h3>
+                                <p class="text-brand-purple uppercase text-sm tracking-widest font-bold mb-6">
+                                    <%= featuredGame.genre %>
+                                </p>
+                                <p class="text-gray-300 leading-relaxed mb-8">
                                     <%= featuredGame.description %>
                                 </p>
-
                                 <div class="flex flex-wrap gap-4">
                                     <% if (featuredGame.hasDemo) { %>
                                         <a href="/games/<%= featuredGame.id %>#demo"
@@ -93,141 +60,67 @@
                     </div>
                 </div>
             </section>
-            <% } %>
+        <% } %>
 
-                <!-- Latest Games Section -->
-                <section class="py-24 bg-gray-900">
-                    <div class="container mx-auto px-4">
-                        <div class="text-center mb-16">
-                            <h2 class="text-5xl md:text-6xl text-white mb-4 tracking-wide font-bold">
-                                MORE FROM US
-                            </h2>
-                            <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
-                        </div>
+        <!-- More Games Section -->
+        <section class="py-12 md:py-16 bg-black">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex items-baseline justify-between mb-8">
+                        <h2 class="text-2xl md:text-3xl text-white font-bold">More games</h2>
+                        <a href="/games"
+                            class="text-brand-gold hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
+                            View all →
+                        </a>
+                    </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            <% recentGames.forEach(game=> { %>
-                                <a href="/games/<%= game.id %>" class="group block game-card">
-                                    <div
-                                        class="h-full bg-black border-2 border-gray-800 hover:border-brand-gold transition-all duration-300 overflow-hidden">
-                                        <!-- Game Thumbnail -->
-                                        <div class="aspect-[5/4] bg-black overflow-hidden border-b-2 border-gray-800 group-hover:border-brand-gold transition-colors relative">
-                                            <div class="absolute inset-0 flex items-center justify-center z-0 bg-gradient-to-br from-gray-800 to-black">
-                                                <div class="text-6xl opacity-30 group-hover:opacity-50 transition-opacity">🎮</div>
-                                            </div>
-                                            <img src="<%= game.thumbnail %>" 
-                                                 alt="<%= game.title %>" 
-                                                 class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 relative z-10 game-image"
-                                                 onerror="this.style.display='none'">
-                                        </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+                        <% recentGames.forEach(game=> { %>
+                            <a href="/games/<%= game.id %>" class="group block">
+                                <div class="aspect-[5/4] bg-gray-900 overflow-hidden mb-4">
+                                    <img src="<%= game.thumbnail %>" alt="<%= game.title %>" loading="lazy"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                                </div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-gold transition-colors">
+                                    <%= game.title %>
+                                </h3>
+                                <p class="text-sm text-gray-400">
+                                    <%= game.genre %>
+                                </p>
+                            </a>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                                        <!-- Game Info -->
-                                        <div class="p-6">
-                                            <h3
-                                                class="text-2xl font-bold text-brand-gold mb-2 tracking-wide group-hover:text-white transition-colors">
-                                                <%= game.title %>
-                                            </h3>
-                                            <p
-                                                class="text-xs text-brand-purple uppercase tracking-widest font-bold mb-3">
-                                                <%= game.genre %>
-                                            </p>
-                                            <p class="text-gray-400 text-sm leading-relaxed">
-                                                <%= game.description %>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                                <% }); %>
-                        </div>
-
-                        <div class="text-center mt-16">
-                            <a href="/games" class="btn-secondary inline-block uppercase tracking-wide">
-                                View All Games
+        <!-- Awards Section -->
+        <% if (awards.length> 0) { %>
+            <section class="pt-12 md:pt-16 pb-20 md:pb-24 bg-black">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="flex items-baseline justify-between mb-8">
+                            <h2 class="text-2xl md:text-3xl text-white font-bold">Awards</h2>
+                            <a href="/about"
+                                class="text-brand-gold hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">
+                                About us →
                             </a>
                         </div>
-                    </div>
-                </section>
 
-                <!-- Awards Section -->
-                <% if (awards.length> 0) { %>
-                    <section class="py-24 bg-black">
-                        <div class="container mx-auto px-4">
-                            <div class="text-center mb-16">
-                                <h2 class="text-5xl md:text-6xl text-white mb-4 tracking-wide font-bold">
-                                    AWARD-WINNING
-                                </h2>
-                                <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
-                            </div>
-                            <div class="flex flex-wrap justify-center gap-x-8 gap-y-12 max-w-6xl mx-auto">
-                                <% awards.forEach(award=> { %>
-                                    <a href="/games/<%= award.game %>" class="flex flex-col items-center group">
-                                        <%- include('partials/award-badge', { award }) %>
-                                        <span
-                                            class="mt-3 text-sm text-gray-400 group-hover:text-brand-gold transition-colors uppercase tracking-widest font-semibold">
-                                            <%= award.gameTitle %>
-                                        </span>
-                                    </a>
-                                <% }); %>
-                            </div>
-                        </div>
-                    </section>
-                <% } %>
-
-                <!-- Studio Section -->
-                <section class="py-24 bg-gray-900">
-                    <div class="container mx-auto px-4">
-                        <div class="max-w-4xl mx-auto text-center">
-                            <h2 class="text-5xl md:text-6xl text-white mb-4 tracking-wide font-bold">
-                                WHO WE ARE
-                            </h2>
-                            <div class="w-24 h-1 bg-brand-gold mx-auto mb-12"></div>
-                            <div class="flex justify-center -space-x-4 mb-10">
-                                <% teamMembers.forEach(member=> { %>
-                                    <img src="<%= member.image %>" alt="<%= member.name %>" title="<%= member.name %>"
-                                        loading="lazy"
-                                        class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-gray-900 bg-gray-800">
-                                <% }); %>
-                            </div>
-                            <p class="text-xl text-gray-300 leading-relaxed mb-12">
-                                Five friends from Surabaya, Indonesia, who started making games together for a
-                                college project and never stopped. Our name is an acronym of our five members.
-                            </p>
-                            <a href="/about" class="btn-secondary inline-block uppercase tracking-wide">
-                                Meet the Team
-                            </a>
+                        <div class="flex flex-wrap justify-center md:justify-between gap-8">
+                            <% awards.forEach(award=> { %>
+                                <a href="/games/<%= award.game %>" class="flex flex-col items-center group">
+                                    <%- include('partials/award-badge', { award }) %>
+                                    <span
+                                        class="mt-2 text-sm text-gray-400 group-hover:text-brand-gold transition-colors">
+                                        <%= award.gameTitle %>
+                                    </span>
+                                </a>
+                            <% }); %>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
+        <% } %>
 
-                <!-- Community Section -->
-                <section class="py-20 bg-brand-purple">
-                    <div class="container mx-auto px-4">
-                        <div class="max-w-4xl mx-auto text-center">
-                            <h2 class="text-4xl md:text-5xl text-white mb-6 tracking-wide font-bold">
-                                JOIN THE COMMUNITY
-                            </h2>
-                            <p class="text-lg text-white/80 mb-10">
-                                Follow development, playtest new builds and tell us what you think.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="https://discord.gg/hWJfE8d8gv" target="_blank" rel="noopener"
-                                    class="flex items-center justify-center gap-3 bg-brand-gold hover:bg-white text-black font-bold px-8 py-4 uppercase tracking-wide transition-colors">
-                                    <%- getIcon('discord', 'w-6 h-6' ) %>
-                                        Discord
-                                </a>
-                                <a href="https://instagram.com/studioafair" target="_blank" rel="noopener"
-                                    class="flex items-center justify-center gap-3 bg-black/30 hover:bg-black text-white font-bold px-8 py-4 uppercase tracking-wide transition-colors">
-                                    <%- getIcon('instagram', 'w-6 h-6' ) %>
-                                        Instagram
-                                </a>
-                                <a href="https://youtube.com/@afairstudio" target="_blank" rel="noopener"
-                                    class="flex items-center justify-center gap-3 bg-black/30 hover:bg-black text-white font-bold px-8 py-4 uppercase tracking-wide transition-colors">
-                                    <%- getIcon('youtube', 'w-6 h-6' ) %>
-                                        YouTube
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <%- include('partials/footer') %>
+        <%- include('partials/footer') %>
