@@ -1,150 +1,107 @@
 <%- include('partials/header', { pageTitle: 'Contact Us' }) %>
 
         <!-- Contact Header -->
-        <section class="py-24 bg-gradient-to-b from-gray-900 to-black">
+        <section class="pt-12 md:pt-16 pb-8 bg-black">
             <div class="container mx-auto px-4">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h1 class="text-6xl md:text-7xl font-bold text-white mb-6 tracking-wide">
-                        GET IN TOUCH
-                    </h1>
-                    <div class="w-24 h-1 bg-brand-gold mx-auto mb-8"></div>
-                    <p class="text-xl text-gray-300">
-                        We'd love to hear from you! Whether you have feedback, questions, or just want to say hi.
+                <div class="max-w-6xl mx-auto">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">Get in touch</h1>
+                    <p class="text-lg text-gray-400">
+                        Feedback, questions, or just want to say hi? We'd love to hear from you.
                     </p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Content -->
-        <section class="py-16 bg-black">
+        <section class="pt-4 pb-20 md:pb-24 bg-black">
             <div class="container mx-auto px-4">
-                <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-
-                    <!-- Contact Info -->
-                    <div class="space-y-8">
-                        <div>
-                            <h2 class="text-3xl font-bold text-white mb-8 tracking-wide uppercase">
-                                Studio Info
-                            </h2>
-                            <div class="space-y-6">
-                                <div class="bg-gray-900 border-2 border-gray-800 p-6">
-                                    <h3 class="text-xl text-brand-gold mb-3 tracking-wide uppercase font-bold">Location
-                                    </h3>
-                                    <p class="text-gray-300">Surabaya, Indonesia</p>
-                                </div>
-
-                                <div class="bg-gray-900 border-2 border-gray-800 p-6">
-                                    <h3 class="text-xl text-brand-gold mb-3 tracking-wide uppercase font-bold">Email
-                                    </h3>
-                                    <a href="mailto:studioafair@gmail.com"
-                                        class="text-gray-300 hover:text-brand-gold transition-colors">
-                                        studioafair@gmail.com
-                                    </a>
-                                </div>
-
-                                <div class="bg-gray-900 border-2 border-gray-800 p-6">
-                                    <h3 class="text-xl text-brand-gold mb-3 tracking-wide uppercase font-bold">Hours
-                                    </h3>
-                                    <p class="text-gray-300">Monday - Friday</p>
-                                    <p class="text-gray-400 text-sm">9:00 AM - 5:00 PM (GMT+7)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Social Links -->
-                        <div>
-                            <h2 class="text-3xl font-bold text-white mb-8 tracking-wide uppercase">
-                                Follow Us
-                            </h2>
-                            <div class="space-y-4">
-                                <a href="https://instagram.com/studioafair" target="_blank"
-                                    class="flex items-center space-x-4 bg-gray-900 border-2 border-gray-800 hover:border-brand-gold p-4 transition-all group">
-                                    <%- getIcon('instagram', 'w-6 h-6 fill-current text-gray-400 group-hover:text-brand-gold transition-colors'
-                                        ) %>
-                                        <div>
-                                            <p
-                                                class="font-semibold text-white group-hover:text-brand-gold transition-colors">
-                                                Instagram</p>
-                                            <p class="text-sm text-gray-400">@studioafair</p>
-                                        </div>
-                                </a>
-
-                                <a href="https://discord.gg/hWJfE8d8gv" target="_blank"
-                                    class="flex items-center space-x-4 bg-gray-900 border-2 border-gray-800 hover:border-brand-gold p-4 transition-all group">
-                                    <%- getIcon('discord', 'w-6 h-6 fill-current text-gray-400 group-hover:text-brand-gold transition-colors'
-                                        ) %>
-                                        <div>
-                                            <p
-                                                class="font-semibold text-white group-hover:text-brand-gold transition-colors">
-                                                Discord</p>
-                                            <p class="text-sm text-gray-400">Join our community</p>
-                                        </div>
-                                </a>
-
-                                <a href="https://youtube.com/@afairstudio" target="_blank"
-                                    class="flex items-center space-x-4 bg-gray-900 border-2 border-gray-800 hover:border-brand-gold p-4 transition-all group">
-                                    <%- getIcon('youtube', 'w-6 h-6 fill-current text-gray-400 group-hover:text-brand-gold transition-colors'
-                                        ) %>
-                                        <div>
-                                            <p
-                                                class="font-semibold text-white group-hover:text-brand-gold transition-colors">
-                                                YouTube</p>
-                                            <p class="text-sm text-gray-400">@afairstudio</p>
-                                        </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="max-w-6xl mx-auto grid md:grid-cols-5 gap-12 md:gap-16">
 
                     <!-- Contact Form -->
-                    <div>
-                        <h2 class="text-3xl font-bold text-white mb-8 tracking-wide uppercase">
-                            Send A Message
-                        </h2>
-                        <form id="contact-form" class="space-y-6 bg-gray-900 border-2 border-gray-800 p-8">
-                            <div>
-                                <label for="name"
-                                    class="block text-gray-300 font-bold mb-2 uppercase text-sm tracking-wider">Your
-                                    Name</label>
-                                <input type="text" id="name" name="name"
-                                    class="w-full px-4 py-3 bg-black border-2 border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors"
-                                    placeholder="John Doe" required>
+                    <div class="md:col-span-3">
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Send a message</h2>
+                        <form id="contact-form" class="space-y-6">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="block text-sm text-gray-400 mb-2">Your name</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full px-4 py-3 bg-gray-900 border border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors"
+                                        required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm text-gray-400 mb-2">Your email</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full px-4 py-3 bg-gray-900 border border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors"
+                                        required>
+                                </div>
                             </div>
 
                             <div>
-                                <label for="email"
-                                    class="block text-gray-300 font-bold mb-2 uppercase text-sm tracking-wider">Your
-                                    Email</label>
-                                <input type="email" id="email" name="email"
-                                    class="w-full px-4 py-3 bg-black border-2 border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors"
-                                    placeholder="john@example.com" required>
-                            </div>
-
-                            <div>
-                                <label for="subject"
-                                    class="block text-gray-300 font-bold mb-2 uppercase text-sm tracking-wider">Subject</label>
+                                <label for="subject" class="block text-sm text-gray-400 mb-2">Subject</label>
                                 <input type="text" id="subject" name="subject"
-                                    class="w-full px-4 py-3 bg-black border-2 border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors"
-                                    placeholder="Game Feedback" required>
+                                    class="w-full px-4 py-3 bg-gray-900 border border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors"
+                                    required>
                             </div>
 
                             <div>
-                                <label for="message"
-                                    class="block text-gray-300 font-bold mb-2 uppercase text-sm tracking-wider">Message</label>
+                                <label for="message" class="block text-sm text-gray-400 mb-2">Message</label>
                                 <textarea id="message" name="message" rows="6"
-                                    class="w-full px-4 py-3 bg-black border-2 border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors resize-none"
-                                    placeholder="Tell us what's on your mind..." required></textarea>
+                                    class="w-full px-4 py-3 bg-gray-900 border border-gray-800 focus:border-brand-gold focus:outline-none text-white transition-colors resize-none"
+                                    required></textarea>
                             </div>
 
-                            <button type="submit" class="btn-primary w-full uppercase tracking-wide">
+                            <button type="submit" class="btn-primary uppercase tracking-wide">
                                 Send Message
                             </button>
 
-                            <p class="text-sm text-gray-500 text-center">
-                                This opens your email app with the message filled in. We typically respond
-                                within 24-48 hours.
+                            <p class="text-sm text-gray-500">
+                                This opens your email app with the message filled in. We typically respond within
+                                24-48 hours.
                             </p>
                         </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="md:col-span-2">
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">Studio info</h2>
+                        <dl class="space-y-6 mb-10">
+                            <div>
+                                <dt class="text-sm text-gray-500 mb-1">Email</dt>
+                                <dd>
+                                    <a href="mailto:studioafair@gmail.com"
+                                        class="text-white hover:text-brand-gold transition-colors">
+                                        studioafair@gmail.com
+                                    </a>
+                                </dd>
+                            </div>
+                            <div>
+                                <dt class="text-sm text-gray-500 mb-1">Location</dt>
+                                <dd class="text-white">Surabaya, Indonesia</dd>
+                            </div>
+                            <div>
+                                <dt class="text-sm text-gray-500 mb-1">Hours</dt>
+                                <dd class="text-white">Monday - Friday, 9:00 AM - 5:00 PM (GMT+7)</dd>
+                            </div>
+                        </dl>
+
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">Follow us</h2>
+                        <div class="space-y-4">
+                            <a href="https://instagram.com/studioafair" target="_blank" rel="noopener"
+                                class="flex items-center gap-3 text-gray-300 hover:text-brand-gold transition-colors">
+                                <%- getIcon('instagram', 'w-5 h-5' ) %>
+                                    <span>Instagram</span>
+                            </a>
+                            <a href="https://discord.gg/hWJfE8d8gv" target="_blank" rel="noopener"
+                                class="flex items-center gap-3 text-gray-300 hover:text-brand-gold transition-colors">
+                                <%- getIcon('discord', 'w-5 h-5' ) %>
+                                    <span>Discord</span>
+                            </a>
+                            <a href="https://youtube.com/@afairstudio" target="_blank" rel="noopener"
+                                class="flex items-center gap-3 text-gray-300 hover:text-brand-gold transition-colors">
+                                <%- getIcon('youtube', 'w-5 h-5' ) %>
+                                    <span>YouTube</span>
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -156,10 +113,7 @@
             document.getElementById('contact-form').addEventListener('submit', function (e) {
                 e.preventDefault();
                 const data = new FormData(this);
-                const body = data.get('message') + '
-
-' + data.get('name') + '
-' + data.get('email');
+                const body = data.get('message') + '\n\n' + data.get('name') + '\n' + data.get('email');
                 window.location.href = 'mailto:studioafair@gmail.com'
                     + '?subject=' + encodeURIComponent(data.get('subject'))
                     + '&body=' + encodeURIComponent(body);
