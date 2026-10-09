@@ -118,7 +118,7 @@ content/games/my-game/
 ├── game.json        # Text and links (required)
 ├── banner.jpg       # Full-width header image
 ├── logo.png         # Optional title art over the banner (falls back to the title as text)
-├── thumb.jpg        # Card image on the home and games pages
+├── thumb.jpg        # Card image on the home and games pages (5:4, like itch.io covers)
 ├── feature.jpg      # Image beside the features list
 └── screenshots/     # Any number of images, shown in filename order
     ├── 01-main-menu.jpg   # Caption becomes "Main Menu"
