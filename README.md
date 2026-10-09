@@ -203,7 +203,6 @@ The `vercel.json` configuration handles the Express app as a serverless function
 - ✅ Sticky navigation
 - ✅ Games database with dynamic routing
 - ✅ 16:9 responsive iframe containers for game embeds
-- ✅ Newsletter signup form
 - ✅ Social media integration
 - ✅ SEO-friendly structure
 

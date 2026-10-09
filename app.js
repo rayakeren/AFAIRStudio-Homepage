@@ -61,6 +61,16 @@ app.get('/tos', (req, res) => {
     res.render('legal/tos');
 });
 
+// Sitemap, generated from the routes above and the games in /content
+const SITE_URL = 'https://www.a-fair.com';
+app.get('/sitemap.xml', (req, res) => {
+    const paths = ['/', '/games', ...gamesData.map(game => `/games/${game.id}`), '/about', '/contact', '/privacy', '/tos'];
+    const urls = paths.map(p => `  <url><loc>${SITE_URL}${p}</loc></url>`).join('\n');
+    res.type('application/xml').send(
+        `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
+    );
+});
+
 // 404 Handler
 app.use((req, res) => {
     res.status(404).render('404', {
