@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
     const featuredGame = gamesData.find(game => game.featured);
     // Games are sorted newest first; the featured one already has its own section
     const recentGames = gamesData.filter(game => game !== featuredGame).slice(0, 3);
-    res.render('index', { featuredGame, recentGames, awards, teamMembers });
+    res.render('index', { featuredGame, recentGames, awards });
 });
 
 app.get('/about', (req, res) => {
