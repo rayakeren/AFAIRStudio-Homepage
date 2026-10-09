@@ -71,10 +71,23 @@
                                     <%= featuredGame.description %>
                                 </p>
 
-                                <a href="/games/<%= featuredGame.id %>"
-                                    class="btn-primary inline-block uppercase tracking-wide">
-                                    View Game
-                                </a>
+                                <div class="flex flex-wrap gap-4">
+                                    <% if (featuredGame.hasDemo) { %>
+                                        <a href="/games/<%= featuredGame.id %>#demo"
+                                            class="btn-primary inline-block uppercase tracking-wide">
+                                            Play in Browser
+                                        </a>
+                                        <a href="/games/<%= featuredGame.id %>"
+                                            class="btn-secondary inline-block uppercase tracking-wide">
+                                            View Game
+                                        </a>
+                                    <% } else { %>
+                                        <a href="/games/<%= featuredGame.id %>"
+                                            class="btn-primary inline-block uppercase tracking-wide">
+                                            View Game
+                                        </a>
+                                    <% } %>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -82,21 +95,21 @@
             </section>
             <% } %>
 
-                <!-- All Games Section -->
+                <!-- Latest Games Section -->
                 <section class="py-24 bg-gray-900">
                     <div class="container mx-auto px-4">
                         <div class="text-center mb-16">
                             <h2 class="text-5xl md:text-6xl text-white mb-4 tracking-wide font-bold">
-                                OUR GAMES
+                                MORE FROM US
                             </h2>
                             <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                            <% gamesData.forEach(game=> { %>
+                            <% recentGames.forEach(game=> { %>
                                 <a href="/games/<%= game.id %>" class="group block game-card">
                                     <div
-                                        class="bg-black border-2 border-gray-800 hover:border-brand-gold transition-all duration-300 overflow-hidden">
+                                        class="h-full bg-black border-2 border-gray-800 hover:border-brand-gold transition-all duration-300 overflow-hidden">
                                         <!-- Game Thumbnail -->
                                         <div class="aspect-video bg-black overflow-hidden border-b-2 border-gray-800 group-hover:border-brand-gold transition-colors relative">
                                             <div class="absolute inset-0 flex items-center justify-center z-0 bg-gradient-to-br from-gray-800 to-black">
@@ -131,6 +144,88 @@
                             <a href="/games" class="btn-secondary inline-block uppercase tracking-wide">
                                 View All Games
                             </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Awards Section -->
+                <% if (awards.length> 0) { %>
+                    <section class="py-24 bg-black">
+                        <div class="container mx-auto px-4">
+                            <div class="text-center mb-16">
+                                <h2 class="text-5xl md:text-6xl text-white mb-4 tracking-wide font-bold">
+                                    AWARD-WINNING
+                                </h2>
+                                <div class="w-24 h-1 bg-brand-gold mx-auto"></div>
+                            </div>
+                            <div class="flex flex-wrap justify-center gap-x-8 gap-y-12 max-w-6xl mx-auto">
+                                <% awards.forEach(award=> { %>
+                                    <a href="/games/<%= award.game %>" class="flex flex-col items-center group">
+                                        <%- include('partials/award-badge', { award }) %>
+                                        <span
+                                            class="mt-3 text-sm text-gray-400 group-hover:text-brand-gold transition-colors uppercase tracking-widest font-semibold">
+                                            <%= award.gameTitle %>
+                                        </span>
+                                    </a>
+                                <% }); %>
+                            </div>
+                        </div>
+                    </section>
+                <% } %>
+
+                <!-- Studio Section -->
+                <section class="py-24 bg-gray-900">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2 class="text-5xl md:text-6xl text-white mb-4 tracking-wide font-bold">
+                                WHO WE ARE
+                            </h2>
+                            <div class="w-24 h-1 bg-brand-gold mx-auto mb-12"></div>
+                            <div class="flex justify-center -space-x-4 mb-10">
+                                <% teamMembers.forEach(member=> { %>
+                                    <img src="<%= member.image %>" alt="<%= member.name %>" title="<%= member.name %>"
+                                        loading="lazy"
+                                        class="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover border-4 border-gray-900 bg-gray-800">
+                                <% }); %>
+                            </div>
+                            <p class="text-xl text-gray-300 leading-relaxed mb-12">
+                                Five friends from Surabaya, Indonesia, who started making games together for a
+                                college project and never stopped. Our name is an acronym of our five members.
+                            </p>
+                            <a href="/about" class="btn-secondary inline-block uppercase tracking-wide">
+                                Meet the Team
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Community Section -->
+                <section class="py-20 bg-brand-purple">
+                    <div class="container mx-auto px-4">
+                        <div class="max-w-4xl mx-auto text-center">
+                            <h2 class="text-4xl md:text-5xl text-white mb-6 tracking-wide font-bold">
+                                JOIN THE COMMUNITY
+                            </h2>
+                            <p class="text-lg text-white/80 mb-10">
+                                Follow development, playtest new builds and tell us what you think.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="https://discord.gg/hWJfE8d8gv" target="_blank" rel="noopener"
+                                    class="flex items-center justify-center gap-3 bg-brand-gold hover:bg-white text-black font-bold px-8 py-4 uppercase tracking-wide transition-colors">
+                                    <%- getIcon('discord', 'w-6 h-6' ) %>
+                                        Discord
+                                </a>
+                                <a href="https://instagram.com/studioafair" target="_blank" rel="noopener"
+                                    class="flex items-center justify-center gap-3 bg-black/30 hover:bg-black text-white font-bold px-8 py-4 uppercase tracking-wide transition-colors">
+                                    <%- getIcon('instagram', 'w-6 h-6' ) %>
+                                        Instagram
+                                </a>
+                                <a href="https://youtube.com/@afairstudio" target="_blank" rel="noopener"
+                                    class="flex items-center justify-center gap-3 bg-black/30 hover:bg-black text-white font-bold px-8 py-4 uppercase tracking-wide transition-colors">
+                                    <%- getIcon('youtube', 'w-6 h-6' ) %>
+                                        YouTube
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>

@@ -1,6 +1,7 @@
 {
   "title": "Little Mayor",
-  "order": 2,
+  "order": 1,
+  "featured": true,
   "genre": "City Builder / Simulation",
   "description": "Make a toy city around the house. Build little places and send your toy friends to work.",
   "about": "Remember when whatever was lying around the house and your toys were enough to build a city? Little Mayor is a city builder that takes place on a kid's bedroom floor. The whole city is built out of toys and whatever else is lying around the room, and your residents are peg dolls, toy soldiers, robots and more.",

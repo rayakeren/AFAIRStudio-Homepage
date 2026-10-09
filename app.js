@@ -25,7 +25,9 @@ app.use(GAMES_MEDIA_URL, express.static(GAMES_DIR));
 // Routes
 app.get('/', (req, res) => {
     const featuredGame = gamesData.find(game => game.featured);
-    res.render('index', { featuredGame, gamesData });
+    // Games are sorted newest first; the featured one already has its own section
+    const recentGames = gamesData.filter(game => game !== featuredGame).slice(0, 3);
+    res.render('index', { featuredGame, recentGames, awards, teamMembers });
 });
 
 app.get('/about', (req, res) => {
